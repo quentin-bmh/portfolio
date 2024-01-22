@@ -4,16 +4,33 @@
     flex-direction: row;
 }
 .navbar img{
+    margin-left: 30px;
     width: 75px;
     height: 60px;
     padding: 10px;
-    padding-right: 70%;
+    margin-right: 50%;
+    transition: transform 0.3s ease-out;
+    background-color: blue;
 
 }
 .navbar a{
-    padding: 20px;
+    width: 300px;
+    height: 30px;
+    text-decoration: none;
+    color: rgb(155, 131, 87);
+    padding: 25px;
+    text-align: center;
+    font-size: 20px;
 }
+a:hover {
+    text-decoration: underline;
+    pointer-events: stroke;
+}
+.navbar img:hover {
+    transform:rotate(360deg);
+}
+
 body{
     background-color: #F9F7E8;
 }
-
+        
