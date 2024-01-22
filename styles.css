@@ -1,36 +1,68 @@
 .navbar{
-    background-color: #F9F7E8;
+    background-color: rgba(249,247,232,0.9  );
     display: flex;
     flex-direction: row;
+    position:fixed;
 }
 .navbar img{
     margin-left: 30px;
     width: 75px;
     height: 60px;
-    padding: 10px;
+    padding: 5px;
     margin-right: 50%;
-    transition: transform 0.3s ease-out;
-    background-color: blue;
+    transition: transform 1s ease-out;
+    background-color: rgb(155, 131, 87);
 
 }
 .navbar a{
-    width: 300px;
+    width: 400px;
     height: 30px;
     text-decoration: none;
     color: rgb(155, 131, 87);
     padding: 25px;
     text-align: center;
     font-size: 20px;
+    transition: transform 1s ease-out;
 }
 a:hover {
     text-decoration: underline;
-    pointer-events: stroke;
+    transform: scale(2);
+    cursor: pointer;
+
 }
 .navbar img:hover {
-    transform:rotate(360deg);
+    transform:rotate(360deg );
+}
+.navbar img:focus{
+    transform: rotate(-360deg);
 }
 
-body{
+body {
     background-color: #F9F7E8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+.scrollbar {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    height: 5px; /* Hauteur de la barre de défilement */
+    background-color: rgb(155, 131, 87);
+    width: 0; /* La largeur commence à zéro */
+    transition: width 0.5s; /* Ajoute une transition fluide pour une meilleure expérience utilisateur */
+}
+.main{
+    margin-top: 80px;
+    padding: 20px;
+}
+footer {
+    background-color: rgb(155, 131, 87);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Cela pousse le pied de page vers le bas de la page */
 }
         
