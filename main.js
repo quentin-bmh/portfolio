@@ -19,3 +19,32 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollbar.style.width = scrollProgress + '%';
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('download').addEventListener('click', function() {
+        var cheminCV = 'doc/MonCv.pdf';
+
+        fetch(cheminCV)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Le fichier n\'a pas pu être téléchargé.');
+                }
+                return response.blob();
+            })
+            .then(blobCV => {
+                var url = window.URL.createObjectURL(blobCV);
+
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = 'MonCv.pdf';
+
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error('Une erreur s\'est produite lors du téléchargement du fichier.', error));
+    });
+});
+
