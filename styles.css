@@ -180,7 +180,8 @@ html{
     width: 350px;
     height: 500px;
     perspective: 500px;
-    margin-right: 20px; /* Adjust the margin as per your preference */
+    margin-right: 20px;
+    transition: transform 0.5s;
 }
 
 .cocard:hover > .card {

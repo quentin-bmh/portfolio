@@ -47,4 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Une erreur s\'est produite lors du téléchargement du fichier.', error));
     });
 });
+function startVideo(luffy) {
+    var video = document.getElementById('luffy');
+    video.play();
+  }
+
+  // Fonction pour arrêter la vidéo lorsqu'on quitte le survol
+  function stopVideo(luffy) {
+    var video = document.getElementById('luffy');
+    video.pause();
+    video.currentTime = 0;
+  }
 
