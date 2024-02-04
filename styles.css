@@ -37,10 +37,8 @@ a:hover {
     transform: scale(1.2);
     cursor: pointer;
 }
-
-.mirror-text {
-    transform: scaleY(-1);
-    display: inline-block;
+.hidden {
+    display: none;
 }
 
 .navbar img:hover {

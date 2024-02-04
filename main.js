@@ -50,12 +50,30 @@ document.addEventListener('DOMContentLoaded', function() {
 function startVideo(luffy) {
     var video = document.getElementById('luffy');
     video.play();
-  }
+}
 
   // Fonction pour arrêter la vidéo lorsqu'on quitte le survol
-  function stopVideo(luffy) {
+function stopVideo(luffy) {
     var video = document.getElementById('luffy');
     video.pause();
     video.currentTime = 0;
-  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('myProjectsBtn').addEventListener('click', function() {
+      document.getElementById('Java').classList.remove('hidden');
+      document.getElementById('JavaFX').classList.remove('hidden');
+      document.getElementById('Web').classList.remove('hidden');
+    });
+  });
+
+
+
+function toggleSection(){
+    var Java = document.getElementById('Java');
+    var JavaFX = document.getElementById('JavaFX');
+    var Web = document.getElementById('Web');
+    Java.classList.toggle('hidden');
+    JavaFX.classList.toggle('hidden');
+    Web.classList.toggle('hidden');
+}
 
