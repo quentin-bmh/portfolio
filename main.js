@@ -68,12 +68,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function toggleSection(){
-    var Java = document.getElementById('Java');
-    var JavaFX = document.getElementById('JavaFX');
-    var Web = document.getElementById('Web');
-    Java.classList.toggle('hidden');
-    JavaFX.classList.toggle('hidden');
-    Web.classList.toggle('hidden');
-}
+  document.getElementById('Java').addEventListener('click', function() {
+    showCategory('java');
+  });
+
+  document.getElementById('JavaFX').addEventListener('click', function() {
+    showCategory('javafx');
+  });
+
+  document.getElementById('Web').addEventListener('click', function() {
+    showCategory('web');
+  });
+
+  function showCategory(category) {
+    // Masque toutes les catégories
+    document.querySelectorAll('.containerCocard > div').forEach(function(cat) {
+      cat.classList.add('hidden');
+    });
+
+    // Affiche la catégorie spécifique
+    document.querySelector('.' + category).classList.remove('hidden');
+  }
 

@@ -68,7 +68,7 @@ body {
 }
 
 .main {
-    margin-top: 0; /* Update to 0px or the desired spacing */
+    margin-top: 0; 
     padding: 50px;
 }
 
@@ -171,15 +171,38 @@ html{
 
 .containerCocard {
     display: flex;
+    flex-direction: column;
+}
+.java{
+    display: flex;
     flex-direction: row;
 }
-
+.javafx{
+    display: flex;
+    flex-direction: row;
+}
+.web{
+    display: flex;
+    flex-direction: row;
+}
 .cocard {
-    width: 350px;
+    width: 30%;
     height: 500px;
     perspective: 500px;
     margin-right: 20px;
     transition: transform 0.5s;
+}
+#Java{
+    background-image: url('images/btnJava.png');
+    background-size: cover;
+}
+#JavaFX{
+    background-image: url('images/btnJavaFX.png');
+    background-size: cover;
+}
+#Web{
+    background-image: url('images/btnWeb.png');
+    background-size: cover;
 }
 
 .cocard:hover > .card {
