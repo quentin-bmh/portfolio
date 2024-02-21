@@ -4,23 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quentin Montoulieu</title>
-    <script src="main.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>    
     <section id="accueil">
         <div class="container flow">
           <h2>Welcome!</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus dolor ipsum odit, quam ducimus consectetur fuga omnis fugiat amet dolore veritatis. Praesentium, maiores obcaecati?</p>
-          <p>Explicabo dicta, ratione repellat voluptates illo magnam fugit maxime illum a asperiores optio nulla eius quibusdam ex accusamus assumenda. Eaque ipsa nisi veritatis asperiores reprehenderit.</p>
-          <p>Quis consequuntur natus quidem illum nulla sed sint. Minus a aliquid maxime autem optio, blanditiis delectus repudiandae ducimus dicta ut inventore ipsum. Beatae, laborum blanditiis.</p>
-          <p>Nam eos repellat tenetur laudantium neque amet excepturi ipsa non temporibus ipsam eum sit libero incidunt officiis, tempora optio culpa quia similique maxime labore rerum?</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus dolor ipsum odit, quam ducimus consectetur fuga omnis fugiat amet dolore veritatis. Praesentium, maiores obcaecati?</p>
-          <p>Explicabo dicta, ratione repellat voluptates illo magnam fugit maxime illum a asperiores optio nulla eius quibusdam ex accusamus assumenda. Eaque ipsa nisi veritatis asperiores reprehenderit.</p>
-          <p>Quis consequuntur natus quidem illum nulla sed sint. Minus a aliquid maxime autem optio, blanditiis delectus repudiandae ducimus dicta ut inventore ipsum. Beatae, laborum blanditiis.</p>
-          <p>Nam eos repellat tenetur laudantium neque amet excepturi ipsa non temporibus ipsam eum sit libero incidunt officiis, tempora optio culpa quia similique maxime labore rerum?</p>
-          <p>Non pariatur eaque modi commodi doloribus laborum at rem eos. Vero, quos. Earum laborum velit a impedit quaerat, facilis veritatis illum odio repellat ea dicta!</p>
-        </div>
+          <p><strong>Hello!!</strong> I'm Quentin Montoulieu, a french fullstack developper in being!</p>
+          <p>I'm currently studying in Limoges at 3iL to become an engineer</p>
+          <p>Pay attention to the details you will surely be surprised</p>
+          <p>Have a good time going throug my portfolio and I hope it will amaze you!</p></div>
     </section>
     <div class="navbar">
         <img src="images/logo.png" alt="">
@@ -34,10 +27,7 @@
         <section id="portfolio">
             <div class="container flow">
               <h2>Portfolio</h2>
-                <p><strong>Hello!!</strong> I'm Quentin Montoulieu, a french fullstack developper in being!</p>
-                <p>I'm currently studying in Limoges at 3iL to become an engineer</p>
-                <p>Pay attention to the details you will surely be surprised</p>
-                <p>Have a good time going throug my portfolio and I hope it will amaze you!</p>
+                <p>Here you can download my curriculum vitae to have more details on my student education and my projects </p>
                 <div class="button-behaviour">
                   <button id="download" class="beautiful-button">Télécharger CV</button>
                 </div>
@@ -49,58 +39,60 @@
               <h5>Here you can see every projects I have done in the past</h5>
               <h5>Browse the different themes to discover them</h5>
               <button id="myProjectsBtn">My current projects</button>
-              <button class="hidden" id="Java">Java Projects</button>
-              <button class="hidden" id="JavaFX">JavaFX Projects</button>
-              <button class="hidden" id="Web">Web Projects</button>
+              <button class="hidden" id="btnJava">Java Projects</button>
+              <button class="hidden" id="btnJavaFX">JavaFX Projects</button>
+              <button class="hidden" id="btnWeb">Web Projects</button>
               <div class="containerCocard">
                 <div class="java">
-                  <div class="cocard" >
-                    <div class="card">
-                        <div class="front">
-                          <h1>Luffy ce goat</h1>
-                          <p>Additional info on the back of the card</p>                              
-                        </div>
-                        <div class="back">
-                          <video src="video/zone2.mp4" autoplay loop playsinline muted></video>
-                        </div>
-                    </div>                  
-                  </div>
-                  <div class="cocard" onmouseover="startVideo('luffy')" onmouseout="stopVideo('luffy')">
-                    <div class="card">
-                        <div class="front">
-                          <h1>test1</h1>
-                          <p>Additional info on the back of the card</p>
-                        </div>
-                        <div class="back">
-                          <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
-                        </div>
-                    </div>
-                </div>
-                <div class="cocard">
-                  <div class="card">
-                      <div class="front">
-                          <h1>test2</h1>
-                          <p>Additional info on the back of the card</p>
-                      </div>
-                      <div class="back">
-                        <video src="video/zone1.mp4" autoplay loop playsinline muted></video>
+                  <div class="cocard" data-video-id="Dactylearn">
+                      <div class="card">
+                          <div class="front">
+                              <h1>Dactylearn</h1>
+                              <p>Additional info on the back of the card</p>
+                          </div>
+                          <div class="back">
+                              <video src="video/zone2.mp4" autoplay loop playsinline muted id="Dactylearn"></video>
+                          </div>
                       </div>
                   </div>
-                </div>
-                </div>
+                  <div class="cocard" data-video-id="luffy">
+                      <div class="card">
+                          <div class="front">
+                              <h1>luffy</h1>
+                              <p>Additional info on the back of the card</p>
+                          </div>
+                          <div class="back">
+                              <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cocard" data-video-id="zoneFortnite">
+                      <div class="card">
+                          <div class="front">
+                              <h1>zoneFortnite</h1>
+                              <p>Additional info on the back of the card</p>
+                          </div>
+                          <div class="back">
+                              <video src="video/zone1.mp4" autoplay loop playsinline muted id="zoneFortnite"></video>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             
+
                 <div id="javafx" class="hidden">
-                  <div class="cocard" >
+                  <div class="cocard">
                     <div class="card">
                         <div class="front">
                           <h1>test3</h1>
                           <p>Additional info on the back of the card</p>                              
                         </div>
                         <div class="back">
-                          <video src="video/zone2.mp4" autoplay loop playsinline muted></video>
+                          <video src="video/zone2.mp4" autoplay loop playsinline muted ></video>
                         </div>
                     </div>                  
                     </div>
-                    <div class="cocard" onmouseover="startVideo('luffy')" onmouseout="stopVideo('luffy')">
+                    <div class="cocard">
                       <div class="card">
                           <div class="front">
                             <h1>test4</h1>
@@ -123,6 +115,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div id="web" class="hidden">
                   <div class="cocard" >
                     <div class="card">
@@ -135,7 +128,7 @@
                         </div>
                     </div>                  
                   </div>
-                  <div class="cocard" onmouseover="startVideo('luffy')" onmouseout="stopVideo('luffy')">
+                  <div class="cocard">
                     <div class="card">
                         <div class="front">
                           <h1>test7</h1>
@@ -205,4 +198,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
     </script>
 </body>
+
+<script src="main.js"></script>
 </html>

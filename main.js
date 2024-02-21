@@ -20,6 +20,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function startVideo(card) {
+  var video = card.querySelector('video');
+  video.play();
+}
+
+function stopVideo(card) {
+  var video = card.querySelector('video');
+  video.pause();
+  video.currentTime = 0;
+}
+
+document.querySelectorAll('.cocard').forEach(function(card) {
+  card.addEventListener('mouseover', function() {
+      startVideo(card);
+  });
+
+  card.addEventListener('mouseout', function() {
+      stopVideo(card);
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('download').addEventListener('click', function() {
         var cheminCV = 'doc/MonCv.pdf';
@@ -47,36 +68,26 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Une erreur s\'est produite lors du téléchargement du fichier.', error));
     });
 });
-function startVideo(luffy) {
-    var video = document.getElementById('luffy');
-    video.play();
-}
 
-  // Fonction pour arrêter la vidéo lorsqu'on quitte le survol
-function stopVideo(luffy) {
-    var video = document.getElementById('luffy');
-    video.pause();
-    video.currentTime = 0;
-}
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('myProjectsBtn').addEventListener('click', function() {
-      document.getElementById('Java').classList.remove('hidden');
-      document.getElementById('JavaFX').classList.remove('hidden');
-      document.getElementById('Web').classList.remove('hidden');
+      document.getElementById('btnJava').classList.remove('hidden');
+      document.getElementById('btnJavaFX').classList.remove('hidden');
+      document.getElementById('btnWeb').classList.remove('hidden');
     });
   });
 
 
 
-  document.getElementById('Java').addEventListener('click', function() {
+  document.getElementById('btnJava').addEventListener('click', function() {
     showCategory('java');
   });
 
-  document.getElementById('JavaFX').addEventListener('click', function() {
+  document.getElementById('btnJavaFX').addEventListener('click', function() {
     showCategory('javafx');
   });
 
-  document.getElementById('Web').addEventListener('click', function() {
+  document.getElementById('btnWeb').addEventListener('click', function() {
     showCategory('web');
   });
 
