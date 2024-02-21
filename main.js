@@ -69,35 +69,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('myProjectsBtn').addEventListener('click', function() {
-      document.getElementById('btnJava').classList.remove('hidden');
-      document.getElementById('btnJavaFX').classList.remove('hidden');
-      document.getElementById('btnWeb').classList.remove('hidden');
+
+
+
+  function bringToFront(idToFront) {
+    const otherElements = [
+        document.getElementById('Java'),
+        document.getElementById('JavaFX'),
+        document.getElementById('Web')
+    ];
+    otherElements.forEach(element => {
+        element.classList.remove('animationStartedBack');
+        element.classList.remove('animationStartedFront');
     });
-  });
-
-
-
-  document.getElementById('btnJava').addEventListener('click', function() {
-    showCategory('java');
-  });
-
-  document.getElementById('btnJavaFX').addEventListener('click', function() {
-    showCategory('javafx');
-  });
-
-  document.getElementById('btnWeb').addEventListener('click', function() {
-    showCategory('web');
-  });
-
-  function showCategory(category) {
-    // Masque toutes les catégories
-    document.querySelectorAll('.containerCocard > div').forEach(function(cat) {
-      cat.classList.add('hidden');
+    const element = otherElements.find(e => e.style.display!=='none');
+    const elementCaches = otherElements.filter(e => e.id !== idToFront && e.id !== element.id);
+    document.getElementById(idToFront).style.display='block';
+    document.getElementById(element.id).style.display='block';
+  
+    document.getElementById(idToFront).classList.add('animationStartedFront');
+    element.classList.add('animationStartedBack');
+  
+    elementCaches.forEach(e => {
+        document.getElementById(e.id).style.display='none';
     });
-
-    // Affiche la catégorie spécifique
-    document.querySelector('.' + category).classList.remove('hidden');
+    element.addEventListener('animationend', function() {
+        putHidden(element.id);
+  
+  
+    }, { once: true });
   }
-
+  
+  function putHidden(idHidden){
+    document.getElementById(idHidden).style.display='none';
+  }

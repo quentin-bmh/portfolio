@@ -39,118 +39,13 @@
               <h5>Here you can see every projects I have done in the past</h5>
               <h5>Browse the different themes to discover them</h5>
               <button id="myProjectsBtn">My current projects</button>
-              <button class="hidden" id="btnJava">Java Projects</button>
-              <button class="hidden" id="btnJavaFX">JavaFX Projects</button>
-              <button class="hidden" id="btnWeb">Web Projects</button>
-              <div class="containerCocard">
-                <div class="java">
-                  <div class="cocard" data-video-id="Dactylearn">
-                      <div class="card">
-                          <div class="front">
-                              <h1>Dactylearn</h1>
-                              <p>Additional info on the back of the card</p>
-                          </div>
-                          <div class="back">
-                              <video src="video/zone2.mp4" autoplay loop playsinline muted id="Dactylearn"></video>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="cocard" data-video-id="luffy">
-                      <div class="card">
-                          <div class="front">
-                              <h1>luffy</h1>
-                              <p>Additional info on the back of the card</p>
-                          </div>
-                          <div class="back">
-                              <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="cocard" data-video-id="zoneFortnite">
-                      <div class="card">
-                          <div class="front">
-                              <h1>zoneFortnite</h1>
-                              <p>Additional info on the back of the card</p>
-                          </div>
-                          <div class="back">
-                              <video src="video/zone1.mp4" autoplay loop playsinline muted id="zoneFortnite"></video>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-             
-
-                <div id="javafx" class="hidden">
-                  <div class="cocard">
-                    <div class="card">
-                        <div class="front">
-                          <h1>test3</h1>
-                          <p>Additional info on the back of the card</p>                              
-                        </div>
-                        <div class="back">
-                          <video src="video/zone2.mp4" autoplay loop playsinline muted ></video>
-                        </div>
-                    </div>                  
-                    </div>
-                    <div class="cocard">
-                      <div class="card">
-                          <div class="front">
-                            <h1>test4</h1>
-                            <p>Additional info on the back of the card</p>
-                          </div>
-                          <div class="back">
-                            <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="cocard">
-                    <div class="card">
-                        <div class="front">
-                            <h1>test5</h1>
-                            <p>Additional info on the back of the card</p>
-                        </div>
-                        <div class="back">
-                          <video src="video/zone1.mp4" autoplay loop playsinline muted></video>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="web" class="hidden">
-                  <div class="cocard" >
-                    <div class="card">
-                        <div class="front">
-                          <h1>test6</h1>
-                          <p>Additional info on the back of the card</p>                              
-                        </div>
-                        <div class="back">
-                          <video src="video/zone2.mp4" autoplay loop playsinline muted></video>
-                        </div>
-                    </div>                  
-                  </div>
-                  <div class="cocard">
-                    <div class="card">
-                        <div class="front">
-                          <h1>test7</h1>
-                          <p>Additional info on the back of the card</p>
-                        </div>
-                        <div class="back">
-                          <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="cocard">
-                    <div class="card">
-                        <div class="front">
-                            <h1>test8</h1>
-                            <p>Additional info on the back of the card</p>
-                        </div>
-                        <div class="back">
-                          <video src="video/zone1.mp4" autoplay loop playsinline muted></video>
-                        </div>
-                    </div>
-                  </div>
-                </div>
+              <button  id="java" onclick="bringToFront('Java')">Java Projects</button>
+              <button  id="javaFX" onclick="bringToFront('JavaFX')">JavaFX Projects</button>
+              <button  id="web" onclick="bringToFront('Web')">Web Projects</button>
+              <div class="containerProjet">
+                <div class="divCommune" style="display: none;" id="Web">Web</div>
+                <div class="divCommune" style="display: none;" id="Java">Java</div>
+                <div class="divCommune" id="JavaFX">JavaFX</div>
               </div>
             </div>
         </section>
@@ -201,3 +96,122 @@ const analytics = getAnalytics(app);
 
 <script src="main.js"></script>
 </html>
+<!--
+<div class="containerCocard">
+                <div class="java">
+                  <div class="cocard" data-video-id="Dactylearn">
+                      <div class="card">
+                          <div class="front">
+                              <div class="frontContent">
+                                <h1>Dactylearn</h1>
+                                <p>This java app looks like the 10fastfingers website and make you learn how to write on your keyboard without looking at it</p>
+                              </div>                              
+                          </div>
+                          <div class="back">
+                              <video src="video/zone2.mp4" autoplay loop playsinline muted id="Dactylearn"></video>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cocard" data-video-id="luffy">
+                      <div class="card">
+                          <div class="front">
+                            <div class="frontContent">
+                              <h1>luffy</h1>
+                              <p>j'aime trop luffy c'est pour ça!!</p>
+                            </div>
+                          </div>
+                          <div class="back">
+                              <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cocard" data-video-id="zoneFortnite">
+                      <div class="card">
+                          <div class="front">
+                            <div class="frontContent">
+                              <h1>zoneFortnite</h1>
+                              <p>This java app simulate how storm works in fortnite and the goal here is to guess where the next zone will go</p>
+                            </div> 
+                          </div>
+                          <div class="back">
+                              <video src="video/zone1.mp4" autoplay loop playsinline muted id="zoneFortnite"></video>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             
+
+                <div class="javafx">
+                  <div class="cocard">
+                    <div class="card">
+                        <div class="front">
+                          <h1>test3</h1>
+                          <p>Additional info on the back of the card</p>                              
+                        </div>
+                        <div class="back">
+                          <video src="video/zone2.mp4" autoplay loop playsinline muted ></video>
+                        </div>
+                    </div>                  
+                    </div>
+                    <div class="cocard">
+                      <div class="card">
+                          <div class="front">
+                            <h1>test4</h1>
+                            <p>Additional info on the back of the card</p>
+                          </div>
+                          <div class="back">
+                            <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="cocard">
+                    <div class="card">
+                        <div class="front">
+                            <h1>test5</h1>
+                            <p>Additional info on the back of the card</p>
+                        </div>
+                        <div class="back">
+                          <video src="video/zone1.mp4" autoplay loop playsinline muted></video>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="web">
+                  <div class="cocard" >
+                    <div class="card">
+                        <div class="front">
+                          <h1>test6</h1>
+                          <p>Additional info on the back of the card</p>                              
+                        </div>
+                        <div class="back">
+                          <video src="video/zone2.mp4" autoplay loop playsinline muted></video>
+                        </div>
+                    </div>                  
+                  </div>
+                  <div class="cocard">
+                    <div class="card">
+                        <div class="front">
+                          <h1>test7</h1>
+                          <p>Additional info on the back of the card</p>
+                        </div>
+                        <div class="back">
+                          <video src="video/luffy.mp4" autoplay loop playsinline muted id="luffy"></video>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="cocard">
+                    <div class="card">
+                        <div class="front">
+                            <h1>test8</h1>
+                            <p>Additional info on the back of the card</p>
+                        </div>
+                        <div class="back">
+                          <video src="video/zone1.mp4" autoplay loop playsinline muted></video>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+-->

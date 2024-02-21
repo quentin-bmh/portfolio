@@ -192,15 +192,15 @@ html{
     margin-right: 20px;
     transition: transform 0.5s;
 }
-#Java{
+#btnJava{
     background-image: url('images/btnJava.png');
     background-size: cover;
 }
-#JavaFX{
+#btnJavaFX{
     background-image: url('images/btnJavaFX.png');
     background-size: cover;
 }
-#Web{
+#btnWeb{
     background-image: url('images/btnWeb.png');
     background-size: cover;
 }
@@ -254,3 +254,85 @@ html{
     align-items: center;
     gap: 5rem;
 }
+.frontContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+.containerProjet {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+  }
+
+  .divCommune {
+    position: absolute;
+    width: 45%;
+    height: 15%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+  }
+ 
+  @keyframes animeBack {
+    0% {
+      transform: translateY(-40px)  translateX(-50%);
+      
+    }
+    50% {
+      transform: translateY(30px)  translateX(-50%);
+      z-index: -3;
+    }
+    100% {
+      transform: translateY(-40px) translateX(-50%);
+      z-index: -3;
+      
+    }
+  }
+
+
+  @keyframes animeFront {
+    0% {
+      transform: translateY(-40px)  translateX(-50%);
+      z-index: -3;
+
+    }
+    50% {
+      transform: translateY(-110px)  translateX(-50%);
+      z-index: -1;
+    }
+    100% {
+      transform: translateY(-40px)  translateX(-50%);
+      z-index: -1;
+    }
+  }
+  #Java{
+    background-color: blue;
+  }
+  #JavaFX{
+    background-color: blueviolet;
+  }
+  .hidden{
+    display: none;
+  }
+
+
+
+  .animationStartedFront {
+    animation: animeFront 2.5s ease-out forwards;
+    
+
+  }
+
+  .animationStartedBack {
+    animation: animeBack 2.5s ease-out forwards;
+    display: none;
+
+  }
