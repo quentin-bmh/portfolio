@@ -38,12 +38,77 @@
               <h2>Projects</h2>
               <h5>Here you can see every projects I have done in the past</h5>
               <h5>Browse the different themes to discover them</h5>
-              <button id="myProjectsBtn">My current projects</button>
+              
+            </div>
+        </section>
+        <section id="skills">
+            <div class="container flow">
+              <h2>Mes Compétences</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus dolor ipsum odit, quam ducimus consectetur fuga omnis fugiat amet dolore veritatis. Praesentium, maiores obcaecati?</p>
+              <p>Explicabo dicta, ratione repellat voluptates illo magnam fugit maxime illum a asperiores optio nulla eius quibusdam ex accusamus assumenda. Eaque ipsa nisi veritatis asperiores reprehenderit.</p>
+              <p>Quis consequuntur natus quidem illum nulla sed sint. Minus a aliquid maxime autem optio, blanditiis delectus repudiandae ducimus dicta ut inventore ipsum. Beatae, laborum blanditiis.</p>
+              <p>Nam eos repellat tenetur laudantium neque amet excepturi ipsa non temporibus ipsam eum sit libero incidunt officiis, tempora optio culpa quia similique maxime labore rerum?</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus dolor ipsum odit, quam ducimus consectetur fuga omnis fugiat amet dolore veritatis. Praesentium, maiores obcaecati?</p>
+              <p>Explicabo dicta, ratione repellat voluptates illo magnam fugit maxime illum a asperiores optio nulla eius quibusdam ex accusamus assumenda. Eaque ipsa nisi veritatis asperiores reprehenderit.</p>
+              <p>Quis consequuntur natus quidem illum nulla sed sint. Minus a aliquid maxime autem optio, blanditiis delectus repudiandae ducimus dicta ut inventore ipsum. Beatae, laborum blanditiis.</p>
+              <p>Nam eos repellat tenetur laudantium neque amet excepturi ipsa non temporibus ipsam eum sit libero incidunt officiis, tempora optio culpa quia similique maxime labore rerum?</p>
+              <p>Non pariatur eaque modi commodi doloribus laborum at rem eos. Vero, quos. Earum laborum velit a impedit quaerat, facilis veritatis illum odio repellat ea dicta!</p>
+            </div>
+        </section>        
+    </div>
+   
+    <button id="java" onclick="bringToFront('Java')">Java</button>
+    <button id="javafx" onclick="bringToFront('JavaFX')">JavaFX</button>
+    <button id="web" onclick="bringToFront('Web')">Web</button>
+    <button id="test" onclick="bringToFront('Test')">Test</button>
+
+<div class="containerTest">
+  <div class="divCommune" style="display: none;" id="Web">Web</div>
+  <div class="divCommune" style="display: none;" id="Java">Java</div>
+  <div class="divCommune" id="JavaFX">JavaFX</div>
+  <div class="divCommune" style="display: none;" id="Test">Test</div>
+</div>
+
+</body>
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024 Quentin Montoulieu. Tous droits réservés.</p>
+         </div>
+    </footer>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBflupKqXuyPejIFHWQDxEPMsYS_8Gwjwg",
+  authDomain: "portfolio-7a79e.firebaseapp.com",
+  projectId: "portfolio-7a79e",
+  storageBucket: "portfolio-7a79e.appspot.com",
+  messagingSenderId: "455423208006",
+  appId: "1:455423208006:web:c6368e6ef17e4a0c02f847",
+  measurementId: "G-S792BDFQEW"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+    </script>
+</body>
+
+<script src="main.js"></script>
+</html>
+<!--<button id="myProjectsBtn">My current projects</button>
               <button  id="java" onclick="bringToFront('Java')">Java Projects</button>
               <button  id="javaFX" onclick="bringToFront('JavaFX')">JavaFX Projects</button>
               <button  id="web" onclick="bringToFront('Web')">Web Projects</button>
+              
               <div class="containerCocard">
-                <div class="java" id="Java">
+                <div class="java">
                   <div class="cocard" data-video-id="Dactylearn">
                       <div class="card">
                           <div class="front">
@@ -86,7 +151,7 @@
               </div>
              
 
-                <div class="javafx" id="JavaFX">
+                <div class="javafx">
                   <div class="cocard">
                     <div class="card">
                         <div class="front">
@@ -122,7 +187,7 @@
                   </div>
                 </div>
 
-                <div class="web" id="Web">
+                <div class="web">
                   <div class="cocard" >
                     <div class="card">
                         <div class="front">
@@ -157,57 +222,4 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-        </section>
-        <section id="skills">
-            <div class="container flow">
-              <h2>Mes Compétences</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus dolor ipsum odit, quam ducimus consectetur fuga omnis fugiat amet dolore veritatis. Praesentium, maiores obcaecati?</p>
-              <p>Explicabo dicta, ratione repellat voluptates illo magnam fugit maxime illum a asperiores optio nulla eius quibusdam ex accusamus assumenda. Eaque ipsa nisi veritatis asperiores reprehenderit.</p>
-              <p>Quis consequuntur natus quidem illum nulla sed sint. Minus a aliquid maxime autem optio, blanditiis delectus repudiandae ducimus dicta ut inventore ipsum. Beatae, laborum blanditiis.</p>
-              <p>Nam eos repellat tenetur laudantium neque amet excepturi ipsa non temporibus ipsam eum sit libero incidunt officiis, tempora optio culpa quia similique maxime labore rerum?</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus dolor ipsum odit, quam ducimus consectetur fuga omnis fugiat amet dolore veritatis. Praesentium, maiores obcaecati?</p>
-              <p>Explicabo dicta, ratione repellat voluptates illo magnam fugit maxime illum a asperiores optio nulla eius quibusdam ex accusamus assumenda. Eaque ipsa nisi veritatis asperiores reprehenderit.</p>
-              <p>Quis consequuntur natus quidem illum nulla sed sint. Minus a aliquid maxime autem optio, blanditiis delectus repudiandae ducimus dicta ut inventore ipsum. Beatae, laborum blanditiis.</p>
-              <p>Nam eos repellat tenetur laudantium neque amet excepturi ipsa non temporibus ipsam eum sit libero incidunt officiis, tempora optio culpa quia similique maxime labore rerum?</p>
-              <p>Non pariatur eaque modi commodi doloribus laborum at rem eos. Vero, quos. Earum laborum velit a impedit quaerat, facilis veritatis illum odio repellat ea dicta!</p>
-            </div>
-        </section>
-    </div>
-    <footer>
-        <div class="copyright">
-            <p>&copy; 2024 Quentin Montoulieu. Tous droits réservés.</p>
-         </div>
-    </footer>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBflupKqXuyPejIFHWQDxEPMsYS_8Gwjwg",
-  authDomain: "portfolio-7a79e.firebaseapp.com",
-  projectId: "portfolio-7a79e",
-  storageBucket: "portfolio-7a79e.appspot.com",
-  messagingSenderId: "455423208006",
-  appId: "1:455423208006:web:c6368e6ef17e4a0c02f847",
-  measurementId: "G-S792BDFQEW"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-    </script>
-</body>
-
-<script src="main.js"></script>
-</html>
-<!--
-
-
--->
+              </div>-->

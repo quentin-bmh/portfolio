@@ -173,6 +173,7 @@ html{
     display: flex;
     flex-direction: row;
     position: relative;
+    z-index: -15;
 }
 .java{
     display: flex;
@@ -293,17 +294,36 @@ html{
     margin: 20px;
 }
  
+.containerTest {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+  }
+
+  .divCommune {
+    position: absolute;
+    width: 45%;
+    height: 15%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+  }
+
   @keyframes animeBack {
     0% {
-      transform: translateY(-40px);
+      transform: translateY(-40px)  translateX(-50%);
       
     }
     50% {
-      transform: translateY(30px);
+      transform: translateY(30px)  translateX(-50%);
       z-index: -3;
     }
     100% {
-      transform: translateY(-40px);
+      transform: translateY(-40px) translateX(-50%);
       z-index: -3;
       
     }
@@ -312,20 +332,28 @@ html{
 
   @keyframes animeFront {
     0% {
-      transform: translateY(-40px);
+      transform: translateY(-40px)  translateX(-50%);
       z-index: -3;
 
     }
     50% {
-      transform: translateY(-110px);
+      transform: translateY(-110px)  translateX(-50%);
       z-index: -1;
     }
     100% {
-      transform: translateY(-40px);
+      transform: translateY(-40px)  translateX(-50%);
       z-index: -1;
     }
   }
-
+  #Java{
+    background-color: blue;
+  }
+  #JavaFX{
+    background-color: blueviolet;
+  }
+  #Test{
+    background-color: aquamarine;
+  }
   .hidden{
     display: none;
   }
@@ -343,5 +371,4 @@ html{
     display: none;
 
   }
-
-
+    
