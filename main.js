@@ -1,44 +1,79 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var scrollbar = document.querySelector('.scrollbar');
-    var body = document.body;
-    var html = document.documentElement;
-    var navbarHeight = document.querySelector('.navbar').offsetHeight;
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
-    window.addEventListener('scroll', function () {
-        var scrollTop = window.scrollY;
-        var documentHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-        var windowHeight = window.innerHeight;
+    // Get the button that opens the modal
+    var btns = document.querySelectorAll(".cocard");
 
-        // Calculate the scroll progress as a percentage
-        var scrollProgress = ((scrollTop - navbarHeight) / (documentHeight - windowHeight - navbarHeight)) * 100;
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-        // Ensure scrollProgress is within the 0 to 100 range
-        scrollProgress = Math.max(0, Math.min(scrollProgress, 100));
+    // When the user clicks on the button, open the modal
+    btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var videoSrc = btn.querySelector('video').src;
+            var videoPlayer = document.createElement('video');
+            videoPlayer.src = videoSrc;
+            videoPlayer.controls = true;
+            videoPlayer.autoplay = true;
+            videoPlayer.loop = true;
+            videoPlayer.playsinline = true;
 
-        // Set the width of the scrollbar based on the scroll progress
-        scrollbar.style.width = scrollProgress + '%';
+            // Clear the modal content
+            modal.querySelector('.modal-content').innerHTML = '';
+
+            // Append the video player to the modal content
+            modal.querySelector('.modal-content').appendChild(videoPlayer);
+
+            modal.style.display = "block";
+        });
     });
+
+    // When the user clicks on <span> (x) or press "Escape", close the modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    span.onclick = closeModal;
+    window.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            closeModal();
+        }
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    };
 });
 
+function cutVideo(){
+    var videoCut = document.getElementById('Dactylearn');
+    videoCut.currentTime = 50; 
+}
+
 function startVideo(card) {
-  var video = card.querySelector('video');
-  video.play();
+    var video = card.querySelector('video');
+    cutVideo();
+    video.play();
 }
 
 function stopVideo(card) {
-  var video = card.querySelector('video');
-  video.pause();
-  video.currentTime = 0;
+    var video = card.querySelector('video');
+    video.pause();
+    video.currentTime = 0;
 }
 
 document.querySelectorAll('.cocard').forEach(function(card) {
-  card.addEventListener('mouseover', function() {
-      startVideo(card);
-  });
+    card.addEventListener('mouseover', function() {
+        startVideo(card);
+    });
 
-  card.addEventListener('mouseout', function() {
-      stopVideo(card);
-  });
+    card.addEventListener('mouseout', function() {
+        stopVideo(card);
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
