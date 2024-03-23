@@ -69,37 +69,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
-
-  function bringToFront(idToFront) {
+function bringToFront(idToFront) {
     const otherElements = [
         document.getElementById('Java'),
         document.getElementById('JavaFX'),
         document.getElementById('Web')
     ];
+
+    const elementToFront = document.getElementById(idToFront);
+    if (!elementToFront) {
+        console.error('L\'élément à mettre en avant n\'a pas été trouvé.');
+        return;
+    }
+
+    const element = otherElements.find(e => e.style.display !== 'none');
+
+    if (element && element.id === idToFront) {
+        return;
+    }
+
     otherElements.forEach(element => {
         element.classList.remove('animationStartedBack');
         element.classList.remove('animationStartedFront');
     });
-    const element = otherElements.find(e => e.style.display!=='none');
+
     const elementCaches = otherElements.filter(e => e.id !== idToFront && e.id !== element.id);
-    document.getElementById(idToFront).style.display='block';
-    document.getElementById(element.id).style.display='block';
-  
-    document.getElementById(idToFront).classList.add('animationStartedFront');
+
+    elementToFront.style.display = 'flex';
+    document.getElementById(element.id).style.display = 'flex';
+
+    elementToFront.classList.add('animationStartedFront');
     element.classList.add('animationStartedBack');
-  
+
     elementCaches.forEach(e => {
-        document.getElementById(e.id).style.display='none';
+        document.getElementById(e.id).style.display = 'none';
     });
-    element.addEventListener('animationend', function() {
+
+    element.addEventListener('animationend', function () {
         putHidden(element.id);
-  
-  
     }, { once: true });
-  }
-  
-  function putHidden(idHidden){
-    document.getElementById(idHidden).style.display='none';
-  }
+}
+
+
+function putHidden(idHidden) {
+    document.getElementById(idHidden).style.display = 'none';
+}
