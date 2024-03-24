@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
+    // Variable to store the current video player
+    var currentVideoPlayer;
+    // Variable to store the state of the video (playing or paused)
+    var videoState = false;
+
     // When the user clicks on the button, open the modal
     btns.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -25,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Append the video player to the modal content
             modal.querySelector('.modal-content').appendChild(videoPlayer);
 
+            // Set the current video player
+            currentVideoPlayer = videoPlayer;
+            // Set video state to playing
+            videoState = true;
+
             modal.style.display = "block";
         });
     });
@@ -32,12 +42,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // When the user clicks on <span> (x) or press "Escape", close the modal
     function closeModal() {
         modal.style.display = "none";
+        // Pause the current video player when the modal is closed
+        if (currentVideoPlayer) {
+            currentVideoPlayer.pause();
+            // Set video state to paused
+            videoState = false;
+        }
     }
 
     span.onclick = closeModal;
     window.addEventListener('keydown', function(event) {
         if (event.key === "Escape") {
             closeModal();
+        }
+        if (event.key === " ") {
+            event.preventDefault(); // Prevent default behavior of the spacebar
+            // Toggle video play/pause on spacebar press
+            if (currentVideoPlayer) {
+                if (videoState) {
+                    currentVideoPlayer.pause();
+                    // Set video state to paused
+                    videoState = false;
+                } else {
+                    currentVideoPlayer.play();
+                    // Set video state to playing
+                    videoState = true;
+                }
+            }
+        }
+        if (event.key === "f") {
+            // Toggle fullscreen on "f" key press
+            toggleFullscreen();
         }
     });
 
@@ -47,35 +82,48 @@ document.addEventListener('DOMContentLoaded', function() {
             closeModal();
         }
     };
-});
-
-function cutVideo(){
-    var videoCut = document.getElementById('Dactylearn');
-    videoCut.currentTime = 50; 
-}
-
-function startVideo(card) {
-    var video = card.querySelector('video');
-    cutVideo();
-    video.play();
-}
-
-function stopVideo(card) {
-    var video = card.querySelector('video');
-    video.pause();
-    video.currentTime = 0;
-}
-
-document.querySelectorAll('.cocard').forEach(function(card) {
-    card.addEventListener('mouseover', function() {
-        startVideo(card);
+    
+    function cutVideo(){
+        var videoCut = document.getElementById('Dactylearn');
+        videoCut.currentTime = 50; 
+    }
+    
+    function startVideo(card) {
+        var video = card.querySelector('video');
+        cutVideo();
+        video.play();
+    }
+    
+    function stopVideo(card) {
+        var video = card.querySelector('video');
+        video.pause();
+        video.currentTime = 0;
+    }
+    
+    document.querySelectorAll('.cocard').forEach(function(card) {
+        card.addEventListener('mouseover', function() {
+            startVideo(card);
+        });
+    
+        card.addEventListener('mouseout', function() {
+            stopVideo(card);
+        });
     });
-
-    card.addEventListener('mouseout', function() {
-        stopVideo(card);
-    });
+    
+    
+    
+    function toggleFullscreen() {
+        if (currentVideoPlayer) {
+            if (!document.fullscreenElement) {
+                currentVideoPlayer.requestFullscreen().catch(err => {
+                    console.error('Failed to enter fullscreen mode:', err.message);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    }
 });
-
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('download').addEventListener('click', function() {
         var cheminCV = 'doc/MonCv.pdf';
@@ -144,7 +192,6 @@ function bringToFront(idToFront) {
         putHidden(element.id);
     }, { once: true });
 }
-
 
 function putHidden(idHidden) {
     document.getElementById(idHidden).style.display = 'none';

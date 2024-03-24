@@ -238,6 +238,152 @@ html{
     background-image: url('images/btnWeb.png');
     background-size: cover;
 }
+/* Boutons */
+.button-container {
+    display: flex;
+    justify-content: center; /* Alignement horizontal au centre */
+    margin-top: 20px;
+}
+
+/* Boutons */
+.button-card {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.button-card:hover {
+    transform: scale(1.1);
+}
+
+.button-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button-card:hover::before {
+    opacity: 0.7;
+}
+
+#java {
+    background-image: url('images/btnJava.png');
+}
+
+#javafx {
+    background-image: url('images/btnJavaFX.png');
+}
+
+#web {
+    background-image: url('images/btnWeb.png');
+}
+
+/* Effet de texte */
+.button-card::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 18px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button-card:hover::after {
+    opacity: 1;
+}
+
+/* Effet d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animationStartedFront {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animationStartedBack {
+    animation: fadeIn 0.5s ease-in-out reverse;
+}
+
+.custom-button {
+    position: relative;
+    background-image: url('images/btnCSS.png');
+    background-size: auto 280%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #ff4f4f;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-size 0.5s ease, z-index 0.5s ease; /* Ajustement de la durée de transition */
+    width: 200px;
+    height: 80px;
+    overflow: hidden; /* Pour masquer le débordement du texte lors de la transition */
+    z-index: 1; /* Place le bouton au-dessus du texte */
+}
+
+.custom-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Ajustement de la taille du dégradé */
+    background: linear-gradient(to top, #ffff99, #b66161 50%, #ff9999); /* Dégradé jusqu'à la moitié */
+    z-index: 0; /* Place le dégradé en dessous du contenu du bouton */
+}
+
+.default-text,
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer le texte */
+    transition: transform 0.5s ease; /* Ajustement de la durée de transition */
+    z-index: 1; /* Place le texte au-dessus du dégradé */
+}
+
+.hover-text {
+    transform: translate(-50%, 150%); /* Déplacer le texte "Master" vers le bas */
+    opacity: 0; /* Masquer le texte "Master" par défaut */
+}
+
+.custom-button:hover .default-text {
+    transform: translate(-50%, -150%); /* Déplacer le texte "CSS" vers le haut */
+    opacity: 0; /* Masquer le texte "CSS" au survol */
+}
+
+.custom-button:hover .hover-text {
+    transform: translate(-50%, -50%); /* Afficher le texte "Master" au survol */
+    opacity: 1; /* Afficher le texte "Master" au survol */
+}
+
+
+
+
+
+
+  
+  
+  
+
 
 .cocard:hover > .card {
     cursor: pointer;
@@ -380,24 +526,24 @@ html{
     display: none;
 
   }
-  /* Styles for modal */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 9; /* Sit on top */
+    z-index: 9;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
   }
   
   .modal-content {
-    width: 80%; /* Ajustez la largeur de la fenêtre modale selon vos préférences */
-    height: 80vh; /* Ajustez la hauteur de la fenêtre modale selon vos préférences */
-    margin: 10%;
+    width: 50%; /* Ajustez la largeur de la fenêtre modale selon vos préférences */
+    height: 50%; /* Ajustez la hauteur de la fenêtre modale selon vos préférences */
+    margin: 20%;
+    margin-left: 25%;
+    border-radius: 5%;
     overflow: hidden;
     display: flex;
     justify-content: center; /* Centrer horizontalement */

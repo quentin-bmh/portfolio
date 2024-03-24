@@ -38,9 +38,12 @@
               <h2>Projects</h2>
               <h5>Here you can see every projects I have done in the past</h5>
               <h5>Browse the different themes to discover them</h5>
-              <button id="java" onclick="bringToFront('Java')">Java</button>
-              <button id="javafx" onclick="bringToFront('JavaFX')">JavaFX</button>
-              <button id="web" onclick="bringToFront('Web')">Web</button>
+              <div class="button-container">
+                <div id="java" class="button-card" onclick="bringToFront('Java')" data-title="Java"></div>
+                <div id="javafx" class="button-card" onclick="bringToFront('JavaFX')" data-title="JavaFX"></div>
+                <div id="web" class="button-card" onclick="bringToFront('Web')" data-title="Web"></div>
+              </div>
+            
 
               <div class="containerTest">
                 <div class="divCommune" style="display: none;" id="Web">
@@ -161,6 +164,19 @@
         <section id="skills">
             <div class="container flow">
               <h2>Mes Compétences</h2>
+              <div class="button-container">
+                <div id="java" class="button-card"  data-title="Java"></div>
+                <div id="javafx" class="button-card" data-title="JavaFX"></div>
+                <button class="custom-button">
+                  <div class="button-content">
+                    <span class="default-text">CSS</span>
+                    <span class="hover-text">MASTER</span>
+                  </div>
+                </button>
+                
+
+
+              </div>
               <h5>bouton:java,javafx,html,css,js,php,mysql,dbBrowser</h5>
             </div>
         </section>        
